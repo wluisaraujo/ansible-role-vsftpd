@@ -2,5 +2,5 @@
 # tasks file for vsftpd
 
 - name: Importando tarefas e configurações para vsftpd
-  include_tasks: package-base-{{ ansible_distribution }}.yml
+  include_tasks: confi2{{ ansible_distribution }}.yml
 ...
