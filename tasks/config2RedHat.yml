@@ -13,9 +13,9 @@
   copy: 
     src: vsftpd.conf 
     dest: /etc/vsftpd/vsftpd.conf 
-    owner=root 
-    group=root 
-    mode=0644
+    owner: root 
+    group: root 
+    mode: 0644
   when: result is success
 #  notify:
 #          - Restart Vsftpd
