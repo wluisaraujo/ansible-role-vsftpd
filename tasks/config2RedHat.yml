@@ -1,0 +1,20 @@
+---
+- name: "Instalar pacotes para o "{{ ansible_distribution }}" versão "{{ ansible_distribution_major_version }}"
+  yum: 
+    name: vsftpd 
+    state: installed
+  register: result
+  notify:
+          - Start Vsftpd
+          
+- name: "Define o arquivo de configuracao VSFTP"
+  copy: 
+    src: vsftpd.conf 
+    dest: /etc/vsftpd/vsftpd.conf 
+    owner=root 
+    group=root 
+    mode=0644
+  when: result is success
+  notify:
+          - Restart Vsftpd
+...
