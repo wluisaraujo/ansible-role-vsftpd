@@ -1,18 +1,18 @@
 ---
 # handlers file for vsftpd
 ---
-- name: Start Vsftpd
-  service: 
-    name: vsftpd 
-    state: started
+#- name: Start Vsftpd
+#  service: 
+#    name: vsftpd 
+#    state: started
 
-- name: Stop Vsftpd
-  service: 
-    name: vsftpd 
-    state: stopped
+#- name: Stop Vsftpd
+#  service: 
+#    name: vsftpd 
+#    state: stopped
   
-- name: Restart Vsftpd
-  service: 
-    name: vsftpd 
-    state: restarted
+#- name: Restart Vsftpd
+#  service: 
+#    name: vsftpd 
+#    state: restarted
 ...
