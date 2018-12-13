@@ -6,7 +6,9 @@
   register: result
   notify:
           - Start Vsftpd
-          
+  when: 
+    - ansible_os_family == "RedHat" 
+    
 - name: "Define o arquivo de configuracao VSFTP"
   copy: 
     src: vsftpd.conf 
