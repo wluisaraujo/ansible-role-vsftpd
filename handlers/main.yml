@@ -1,6 +1,6 @@
 ---
 # handlers file for vsftpd
----
+
 #- name: Start Vsftpd
 #  service: 
 #    name: vsftpd 
