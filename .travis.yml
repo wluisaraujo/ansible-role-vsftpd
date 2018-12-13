@@ -6,7 +6,7 @@ python: "2.7"
 sudo: true
 
 # This playbook need to run on Ubuntu 14.04 or later
-dist: trust
+#dist: trust
 
 services:
  - docker
@@ -27,18 +27,14 @@ env:
 #   version: 25
 # - distribution: fedora
 #   version: 24
- - distribution: ubuntu
-   version: xenial
+# - distribution: ubuntu
+#   version: xenial
 # - distribution: ubuntu
 #   version: trusty
  - distribution: debian
    version: stretch
  - distribution: debian
    version: jessie
-
-#env:
-#  global:
-#    - ANSIBLE_HOST_KEY_CHECKING="False"
     
 # Install ansible
 addons:
