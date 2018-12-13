@@ -1,8 +1,9 @@
 ---
-- name: "Instalar pacotes para o "{{ ansible_distribution }}" versão "{{ ansible_distribution_major_version }}"
+
+- name: Instalar pacotes para o "{{ ansible_distribution }}" versão "{{ ansible_distribution_major_version }}
   apt: 
     name: vsftpd 
-    state: installed
+    state: latest
   register: result
   #notify:
   #        - Start Vsftpd
