@@ -4,8 +4,8 @@
     name: vsftpd 
     state: installed
   register: result
-  notify:
-          - Start Vsftpd
+#  notify:
+#          - Start Vsftpd
   when: 
     - ansible_os_family == "Debian" 
     
@@ -17,6 +17,6 @@
     group=root 
     mode=0644
   when: result is success
-  notify:
-          - Restart Vsftpd
+#  notify:
+#         - Restart Vsftpd
 ...
