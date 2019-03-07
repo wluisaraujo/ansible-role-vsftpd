@@ -1,11 +1,11 @@
 [![Build Status](https://travis-ci.org/wluisaraujo/iac-ansible-vsftpd.svg?branch=master)](https://travis-ci.org/wluisaraujo/iac-ansible-vsftpd)
 ---
-# IaC: with[Ansible](https://www.ansible) role to install and configure [Vsftp FTP Server](vsftpd.beasts.org/)
-
-================
+# IaC: with [Ansible](https://www.ansible) role to install and configure [Vsftp FTP Server](vsftpd.beasts.org/)
+------------
 
 Description
 ------------
+
  *
 
 Requirements
@@ -32,6 +32,7 @@ Example Playbook
     - name: value
   roles:
     - iac-ansible-vsftpd
+...    
 ```
 
 License
