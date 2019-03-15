@@ -1,18 +1,70 @@
----
-# handlers file for vsftpd
+## SystemD
+- name: Start {{ service_name }}
+  systemd:
+    state: started
+    name: {{ service_name }}.service
+    enabled: yes
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"
 
-#- name: Start Vsftpd
-#  service: 
-#    name: vsftpd 
-#    state: started
+- name: Stop {{ service_name }}
+  systemd:
+    state: stopped
+    name: {{ service_name }}.service
+    enabled: yes
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"
+    
+- name: Restart {{ service_name }}
+  systemd:
+    state: restarted
+    name: {{ service_name }}.service
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"
 
-#- name: Stop Vsftpd
-#  service: 
-#    name: vsftpd 
-#    state: stopped
-  
-#- name: Restart Vsftpd
-#  service: 
-#    name: vsftpd 
-#    state: restarted
+- name: Reload {{ service_name }}
+  systemd:
+    state: reloaded
+    name: {{ service_name }}.service
+    force: yes
+  ignore_errors: yes
+  when: 
+    - ansible_service_mgr == "systemd"     
+
+## SystemV
+- name: Start {{ service_name }}
+  service:
+    state: started
+    name: {{ service_name }}
+    enabled: yes
+  when: 
+    - ansible_service_mgr == "service"
+
+- name: Stop {{ service_name }}
+  service:
+    state: stopped
+    name: {{ service_name }}
+    enabled: yes
+  when: 
+    - ansible_service_mgr == "service"
+    
+- name: Restart {{ service_name }}
+  service:
+    state: restarted
+    name: {{ service_name }}
+  when: 
+    - ansible_service_mgr == "service"
+
+- name: Reload {{ service_name }}
+  service:
+    state: reloaded
+    name: {{ service_name }}
+  when: 
+    - ansible_service_mgr == "service"
 ...
