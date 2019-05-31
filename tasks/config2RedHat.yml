@@ -4,10 +4,9 @@
     name: vsftpd 
     state: latest
   register: result
-#  notify:
-#          - Start Vsftpd
-  when: 
-    - ansible_os_family == "RedHat" 
+  notify:
+    - Start Vsftpd
+  when: ansible_os_family == "RedHat" 
     
 - name: "Define o arquivo de configuracao VSFTP"
   copy: 
@@ -17,6 +16,6 @@
     group: root 
     mode: 0644
   when: result is success
-#  notify:
-#          - Restart Vsftpd
+  notify:
+    - Restart Vsftpd
 ...
