@@ -1,4 +1,5 @@
 galaxy_info:
+  role_name: iac-ansible-vsftpd
   author: w.luis.araujo
   description: "Install FTP Server"
   company: LUSAR | wluisaraujo.github.io
