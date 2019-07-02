@@ -32,8 +32,8 @@ Example Playbook
   vars:
     - name: value
   roles:
-    - iac-ansible-vsftpd
-...    
+    - vsftpd
+...
 ```
 
 ----------------
