@@ -19,7 +19,8 @@ Installation
 
 ```console
 vagrant@localhost:~$ ansible-galaxy install wluisaraujo.vsftpd
-``` 
+vagrant@localhost:~$ ansible-galaxy install -r wluisaraujo.vsftpd/requirements.txt
+```
 
 Role Variables
 --------------
