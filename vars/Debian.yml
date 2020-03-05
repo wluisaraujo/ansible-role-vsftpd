@@ -1,3 +1,6 @@
 ---
 # vars file for vsftpd
 service_name: vsftpd
+
+packages:
+  - vsftpd

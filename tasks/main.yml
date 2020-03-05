@@ -1,6 +1,25 @@
 ---
 # tasks file for vsftpd
 
-- name: Importando tarefas e configurações para vsftpd
-  include_tasks: config2{{ ansible_os_family }}.yml
+- name: "Importando variaveis por OS"
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: "Instalar pacotes para o {{ ansible_distribution }} versão {{ ansible_distribution_major_version }}"
+  package:
+    name: "{{ packages }}"
+    state: latest
+  register: result
+  notify:
+    - Start Vsftpd
+
+- name: "Define o arquivo de configuracao VSFTP"
+  template:
+    src: vsftpd.conf.j2
+    dest: /etc/vsftpd/vsftpd.conf
+    owner: root
+    group: root
+    mode: 0644
+  when: result is success
+  notify:
+    - Restart Vsftpd
 ...
